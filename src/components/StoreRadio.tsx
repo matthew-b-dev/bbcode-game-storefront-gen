@@ -15,7 +15,7 @@ export const StoreRadio = ({
   onSelect: ChangeEventHandler<HTMLInputElement>;
 }) => {
   return (
-    <ul className="grid w-full gap-2 md:grid-cols-3 ml-5">
+    <ul className="grid grid-cols-2 w-full gap-2 md:grid-cols-3 ml-5">
       <RadioOption
         optionId="steam+store"
         optionName="store"
