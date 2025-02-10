@@ -1,50 +1,38 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### BBCode Game Storefront Generator
+Generate store links for the games in your forum-post storefront
 
-Currently, two official plugins are available:
+___________
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+This tool is used to generate **game store links** in their forum-post "storefront".
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Game forums often have a 'Buy/Sell/Trade' thread, where users create posts that represent their "storefront". Users' storefronts are often formatted like so ...
 
-- Configure the top-level `parserOptions` property like this:
+    Peggle Deluxe - $1
+    Magicka - $3.50
+    Kenshi - $2
+   
+... and quite often list 20-30 games in one post, all in **plaintext**. I.e. game names do not link to a game store such as Steam, GOG, or Epic Games Store. This makes for a less-than-satisfactory shopping experience.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Why use this tool?
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+ - This tool will take a plaintext storefront and **automatically generate links** for every game to the selected game store (Steam/GOG/Epic, etc.).
+ - Users can specify  the input format (games and price separated by a dash, colon, etc.) as well as a  desired currency ($ , € , £).
+ - Users can copy the output ([BBCode](https://www.phpbb.com/community/help/bbcode)) with one click and can preview how it will look as a forum post.
+ - Using the above example and choosing Steam as the store, the output would look like this:
+     [Peggle Deluxe](https://duckduckgo.com/?q=!ducky+steam+store+Peggle+Deluxe) - $1
+     [Magicka](https://duckduckgo.com/?q=!ducky+steam+store+Magicka) - $3.50
+     [Kenshi](https://duckduckgo.com/?q=!ducky+steam+store+Kenshi) - $2
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### How are the links generated?
+ - Short answer: **DuckDuckGo** has a way of forming URLs that specify that the browser should automatically redirect to the first result.
+ - Longer answer:
+   - This is accomplished using the `!ducky` bang operator.
+   - e.g. https://duckduckgo.com/?q=!ducky+steam+store+Peggle%20Deluxe
+     - Navigating to this link will search 'steam store Peggle Deluxe' and automatically redirect your browser to the first result.
+   - This tool simply parses the storefront text and creates a bunch of these links. `steam+store` is obviously replaced with `epic+store` or `gog+store` depending on the selected store option.
+   - ... and that's basically it! This is a very simple tool. 
+
+ 
