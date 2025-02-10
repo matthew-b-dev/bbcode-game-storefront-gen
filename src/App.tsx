@@ -124,7 +124,7 @@ const App = () => {
           </div>
         </div>
       </div>
-      <div className="lg:container mx-auto flex w-full flex-wrap items-center justify-between px-3">
+      <div className="lg:container mx-auto flex w-full flex-wrap items-center justify-between px-3 mb-24">
         <FormContent
           setStoreSelection={setStoreSelection}
           setCurrencySelection={setCurrencySelection}
