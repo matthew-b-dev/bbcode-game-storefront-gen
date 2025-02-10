@@ -25,7 +25,7 @@ Game forums often have a 'Buy/Sell/Trade' thread, where users create posts that 
  - Short answer: **DuckDuckGo** has a way of forming URLs that specify that the browser should automatically redirect to the first result.
  - Longer answer:
    - This is accomplished using the `!ducky` bang operator.
-   - e.g. https://duckduckgo.com/?q=!ducky+steam+store+Peggle%20Deluxe
+   - e.g. `https://duckduckgo.com/?q=!ducky+steam+store+Peggle%20Deluxe`
      - Navigating to this link will search 'steam store Peggle Deluxe' and automatically redirect your browser to the first result.
    - This tool simply parses the storefront text and creates a bunch of these links. `steam+store` is obviously replaced with `epic+store` or `gog+store` depending on the selected store option.
    - ... and that's basically it! This is a very simple tool.
