@@ -2,7 +2,7 @@
 ### BBCode Game Storefront Generator
 Generate store links for the games in your forum-post storefront
 
-Live Deployment: https://matthew-b-dev.github.io/bbcode-game-storefront-gen/
+Live Site: https://matthew-b-dev.github.io/bbcode-game-storefront-gen/
 ___________
 
 
