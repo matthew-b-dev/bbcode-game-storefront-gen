@@ -62,8 +62,12 @@ const FormContent = ({
         id="message"
         rows={4}
         className="ml-5 block p-2.5 w-full text-sm rounded-lg border border-2 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
-        placeholder={`Peggle Deluxe ${
-          formatSelection === 'dash' ? '- ' : ''
+        placeholder={`Peggle Deluxe${
+          formatSelection === 'dash'
+            ? ' - '
+            : formatSelection === 'space'
+            ? ' '
+            : ': '
         }${convertCurrency(currencySelection)}3.50`}
         value={textContent}
         onChange={handleTextAreaChange}
