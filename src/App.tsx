@@ -4,6 +4,7 @@ import { convertCurrency, Game } from './utils/utils';
 import FormContent from './components/FormContent';
 import OutputContent from './components/OutputContent';
 import PreviewContent from './components/PreviewContent';
+import { GitHubIcon } from './components/icons/GitHubIcon';
 
 const App = () => {
   const [textContent, setTextContent] = useState<string>('');
@@ -107,6 +108,20 @@ const App = () => {
         </h2>
         <div className="text-center w-full font-normal mt-2 text-gray-500">
           Generate store links for the games in your forum-post storefront
+        </div>
+        <div className="justify-center w-full font-normal mt-2 text-gray-500">
+          <div className="flex justify-center">
+            <a
+              href="https://github.com/matthew-b-dev/bbcode-game-storefront-gen"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="underline flex text-white align-middle items-center">
+                <GitHubIcon />
+                <span className="pl-2">matthew-b-dev</span>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
       <div className="lg:container mx-auto flex w-full flex-wrap items-center justify-between px-3">
