@@ -22,9 +22,9 @@ const App = () => {
       if (formatSelection === 'dash') {
         regex = /(.*) - ([$£€]+)(\d+(\.\d+)?)/;
       } else if (formatSelection === 'space') {
-        regex = /(.*) ([$£€]+)(\d+(\.\d{2})?)/;
+        regex = /(.*) ([$£€]+)(\d+(\.\d+)?)/;
       } else {
-        regex = /(.*): ([$£€]+)(\d+(\.\d{2})?)/;
+        regex = /(.*): ([$£€]+)(\d+(\.\d+)?)/;
       }
       const outputLines: string[] = [];
       const tempGameObjects: Game[] = [];
