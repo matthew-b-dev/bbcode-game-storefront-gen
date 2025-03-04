@@ -34,7 +34,9 @@ const App = () => {
           if (result && result.length >= 4) {
             const url = `https://duckduckgo.com/?q=!ducky+${storeSelection}+${encodeURI(
               result[1]
-            ).replace(/'/g, '%27')}`;
+            )
+              .replace(/'/g, '%27')
+              .replace(/&/g, '%26')}`;
             tempGameObjects.push({
               name: result[1],
               price: `${convertCurrency(currencySelection)}${result[3]}`,
