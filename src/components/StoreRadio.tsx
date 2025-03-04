@@ -44,9 +44,9 @@ export const StoreRadio = ({
         onSelect={onSelect}
       />
       <RadioOption
-        optionId="origin+store"
+        optionId="ea+store"
         optionName="store"
-        optionValue="origin+store"
+        optionValue="ea+store"
         optionText="Origin"
         icon={OriginIcon}
         selectedValue={selectedValue}
